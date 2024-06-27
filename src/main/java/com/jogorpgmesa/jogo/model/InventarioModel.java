@@ -18,7 +18,7 @@ public class InventarioModel implements Serializable {
     private UUID id;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "jog_id_tbl_jogador")
     private JogadorModel donoInventario;
 

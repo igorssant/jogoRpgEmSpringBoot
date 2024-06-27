@@ -26,7 +26,7 @@ public class JogadorModel implements Serializable {
     @NotNull(message = "Informe se o jogador é mestre (1) ou não (0).")
     private Boolean mestre;
 
-    @OneToOne(mappedBy = "donoInventario", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "donoInventario", fetch = FetchType.LAZY)
     private InventarioModel inventarioModel;
 
     @OneToMany(mappedBy = "donoPersonagem", fetch = FetchType.LAZY)
