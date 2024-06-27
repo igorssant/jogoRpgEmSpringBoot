@@ -1,4 +1,5 @@
 package com.jogorpgmesa.jogo.dto;
 
-public record InventarioDto() {
-}
+import java.util.UUID;
+
+public record InventarioDto(UUID donoInventario) {}
