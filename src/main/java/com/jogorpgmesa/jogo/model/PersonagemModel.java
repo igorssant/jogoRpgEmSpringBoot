@@ -20,34 +20,34 @@ public class PersonagemModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(name = "per_nome")
+    @Column(name = "per_nome", nullable = false)
     @NotBlank(message = "O personagem deve possuir um nome.")
     private String nome;
 
-    @Column(name = "per_idade")
+    @Column(name = "per_idade", nullable = false)
     @NotNull(message = "O personagem deve possuir uma idade.")
     @Min(value = 18, message = "Idade deve ser maior ou igual a 18 anos.")
     private Integer idade;
 
-    @Column(name = "per_sexo")
+    @Column(name = "per_sexo", nullable = false)
     @NotNull(message = "Personagem deve possuir um sexo.")
     private Character sexo;
 
-    @Column(name = "per_altura")
+    @Column(name = "per_altura", nullable = false)
     @NotNull(message = "O personagem deve possuir uma idade.")
     @DecimalMin(value = "0.4", message = "Altura deve ser maior ou igual a 0.4 m")
     private Double altura;
 
-    @Column(name = "per_peso")
+    @Column(name = "per_peso", nullable = false)
     @NotNull(message = "O personagem deve possuir um peso.")
     @DecimalMin(value = "1.0", message = "Peso deve ser maior ou igual a 1.0 Kg")
     private Double peso;
 
-    @Column(name = "per_classe")
+    @Column(name = "per_classe", nullable = false)
     @NotNull(message = "O personagem deve possuir uma classe.")
     private Integer classe;
 
-    @Column(name = "per_origem")
+    @Column(name = "per_origem", nullable = false)
     @NotNull(message = "O personagem deve possuir uma origem.")
     private Integer origem;
 

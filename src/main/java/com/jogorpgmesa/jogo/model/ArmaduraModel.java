@@ -19,32 +19,31 @@ public class ArmaduraModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(name = "armo_nome")
+    @Column(name = "armo_nome", nullable = false)
     @NotBlank(message = "Armadura deve possuir um nome.")
     private String nome;
 
-    @Column(name = "armo_bonus")
+    @Column(name = "armo_bonus", nullable = false)
     @NotNull(message = "Armadura deve possuir um bônus na defesa.")
     @Min(1)
     private Integer bonusDefesa;
 
-    @Column(name = "armo_penalidade")
+    @Column(name = "armo_penalidade", nullable = false)
     @NotNull(message = "Armadura deve possuir um nome.")
     @Min(0)
     private Integer penalidadeArmadura;
 
-    @Column(name = "armo_descricao")
+    @Column(name = "armo_descricao", nullable = false)
     @NotBlank(message = "Armadura deve possuir uma descricao.")
     private String descricao;
 
-    @Column(name = "armo_item_magico")
+    @Column(name = "armo_item_magico", nullable = false)
     @NotNull(message = "A armadura é um item magico (1)? Ou item mundano (0) ?")
     private Boolean itemMagico;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "inv_id_tbl_inventario")
-    @Nullable
     private InventarioModel inventarioModelArmadura;
 
     public ArmaduraModel() {}

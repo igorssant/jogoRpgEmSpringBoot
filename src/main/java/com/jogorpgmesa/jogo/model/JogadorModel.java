@@ -3,6 +3,8 @@ package com.jogorpgmesa.jogo.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.beans.factory.annotation.Value;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,12 +20,13 @@ public class JogadorModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(name = "jog_nome")
+    @Column(name = "jog_nome", nullable = false)
     @NotBlank(message = "Nome não pode ser em branco.")
     private String nome;
 
-    @Column(name = "jog_mestre")
+    @Column(name = "jog_mestre", nullable = false)
     @NotNull(message = "Informe se o jogador é mestre (1) ou não (0).")
+    @Value("false")
     private Boolean mestre;
 
     @OneToOne(mappedBy = "donoInventario", fetch = FetchType.LAZY)

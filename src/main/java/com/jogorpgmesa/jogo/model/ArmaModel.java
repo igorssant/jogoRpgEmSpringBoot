@@ -19,30 +19,31 @@ public class ArmaModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(name = "arm_nome")
+    @Column(name = "arm_nome", nullable = false)
     @NotBlank(message = "Arma deve possuir um nome.")
     private String nome;
 
-    @Column(name = "arm_dano")
+    @Column(name = "arm_dano", nullable = false)
     @NotBlank(message = "Arma deve possuir um dano.")
     private String dano;
 
-    @Column(name = "arm_bonus_ataque")
+    @Column(name = "arm_bonus_ataque", nullable = false)
     @Nullable
     @Value("0")
     private Integer bonusAtaque;
 
-    @Column(name = "arm_bonus_dano")
+    @Column(name = "arm_bonus_dano", nullable = false)
     @Nullable
     @Value("0")
     private Integer bonusDano;
 
-    @Column(name = "arm_descricao")
+    @Column(name = "arm_descricao", nullable = false)
     @NotBlank(message = "Arma deve possuir uma descricao.")
     private String descricao;
 
-    @Column(name = "arm_item_magico")
+    @Column(name = "arm_item_magico", nullable = false)
     @NotNull(message = "A arma é um item magico (1)? Ou item mundano (0) ?")
+    @Value("false")
     private Boolean itemMagico;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
