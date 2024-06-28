@@ -20,7 +20,7 @@ public class InventarioModel implements Serializable {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "jog_id_tbl_jogador")
-    private JogadorModel donoInventario;
+    private PersonagemModel donoInventario;
 
     @OneToMany(mappedBy = "inventarioModelArmadura", fetch = FetchType.LAZY)
     private Set<ArmaduraModel> armaduraModelSet = new HashSet<>();
@@ -30,7 +30,7 @@ public class InventarioModel implements Serializable {
 
     public InventarioModel() {}
 
-    public InventarioModel(JogadorModel donoInventario) {
+    public InventarioModel(PersonagemModel donoInventario) {
         this.donoInventario = donoInventario;
     }
 
@@ -38,11 +38,11 @@ public class InventarioModel implements Serializable {
         return id;
     }
 
-    public JogadorModel getDonoInventario() {
+    public PersonagemModel getDonoInventario() {
         return donoInventario;
     }
 
-    public void setDonoInventario(JogadorModel donoInventario) {
+    public void setDonoInventario(PersonagemModel donoInventario) {
         this.donoInventario = donoInventario;
     }
 
