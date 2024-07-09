@@ -4,10 +4,12 @@ import com.jogorpgmesa.jogo.dto.JogadorDto;
 import com.jogorpgmesa.jogo.model.JogadorModel;
 import com.jogorpgmesa.jogo.repository.JogadorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.UUID;
 
+@Service
 public class JogadorService {
     @Autowired
     private final JogadorRepository jogadorRepository;

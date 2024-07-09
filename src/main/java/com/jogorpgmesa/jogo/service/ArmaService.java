@@ -39,11 +39,11 @@ public class ArmaService {
              * SE NAO ESTIVER
              * SALVA O VALOR null
              */
-            inventarioRepository.findById(armaDto.inventarioModelArma()).isPresent() ?
-                inventarioRepository.findById(armaDto.inventarioModelArma()).get() : null
+            this.inventarioRepository.findById(armaDto.inventarioModelArma()).isPresent() ?
+                    this.inventarioRepository.findById(armaDto.inventarioModelArma()).get() : null
         );
 
-        return armaRepository.save(novaArma);
+        return this.armaRepository.save(novaArma);
     }
 
     @Transactional
@@ -76,8 +76,8 @@ public class ArmaService {
              * SE NAO ESTIVER
              * SALVA O VALOR null
              */
-            inventarioRepository.findById(armaDto.inventarioModelArma()).isPresent() ?
-                inventarioRepository.findById(armaDto.inventarioModelArma()).get() : null
+            this.inventarioRepository.findById(armaDto.inventarioModelArma()).isPresent() ?
+                this.inventarioRepository.findById(armaDto.inventarioModelArma()).get() : null
         );
 
         return this.armaRepository.save(armaDoBD);
