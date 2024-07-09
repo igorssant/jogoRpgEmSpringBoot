@@ -29,9 +29,6 @@ public class JogadorModel implements Serializable {
     @Value("false")
     private Boolean mestre;
 
-    @OneToOne(mappedBy = "donoInventario", fetch = FetchType.LAZY)
-    private InventarioModel inventarioModel;
-
     @OneToMany(mappedBy = "donoPersonagem", fetch = FetchType.LAZY)
     private Set<PersonagemModel> personagemModelSet = new HashSet<>();
 
@@ -60,14 +57,6 @@ public class JogadorModel implements Serializable {
 
     public void setMestre(Boolean mestre) {
         this.mestre = mestre;
-    }
-
-    public InventarioModel getInventarioModel() {
-        return inventarioModel;
-    }
-
-    public void setInventarioModel(InventarioModel inventarioModel) {
-        this.inventarioModel = inventarioModel;
     }
 
     public Set<PersonagemModel> getPersonagemModelSet() {

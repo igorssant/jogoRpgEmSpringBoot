@@ -55,6 +55,9 @@ public class PersonagemModel implements Serializable {
     @Nullable
     private Integer deus;
 
+    @OneToOne(mappedBy = "donoInventario", fetch = FetchType.LAZY)
+    private InventarioModel inventarioModel;
+
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "jog_id_tbl_jogador")
@@ -160,5 +163,13 @@ public class PersonagemModel implements Serializable {
 
     public void setDonoPersonagem(JogadorModel donoPersonagem) {
         this.donoPersonagem = donoPersonagem;
+    }
+
+    public InventarioModel getInventarioModel() {
+        return inventarioModel;
+    }
+
+    public void setInventarioModel(InventarioModel inventarioModel) {
+        this.inventarioModel = inventarioModel;
     }
 }

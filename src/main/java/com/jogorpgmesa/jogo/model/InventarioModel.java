@@ -19,7 +19,7 @@ public class InventarioModel implements Serializable {
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "jog_id_tbl_jogador")
+    @JoinColumn(name = "per_id_tbl_personagem")
     private PersonagemModel donoInventario;
 
     @OneToMany(mappedBy = "inventarioModelArmadura", fetch = FetchType.LAZY)
