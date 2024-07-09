@@ -60,9 +60,9 @@ public class ArmaController {
     ) {
         return ResponseEntity
             .status(HttpStatus.OK)
-                .body(this.armaService.updateArma(
-                    id,
-                    armaDto
-                ));
+            .body(this.armaService.updateArma(
+                id,
+                armaDto
+            ));
     }
 }
